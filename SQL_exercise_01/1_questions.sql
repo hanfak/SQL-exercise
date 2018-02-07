@@ -102,6 +102,10 @@ LIMIT 1;
 
 -- 1.16 Select the name of each manufacturer along with the name and price of its most expensive product.
 
+SELECT Manufacturers.Name, Products.Name, MAX(Products.Price)
+FROM Manufacturers JOIN Products
+ON Products.Manufacturer = Manufacturers.Code
+GROUP BY Manufacturers.Name;
 
 -- 1.17 Add a new product: Loudspeakers, $70, manufacturer 2.
 -- 1.18 Update the name of product 8 to "Laser Printer".
